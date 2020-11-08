@@ -12,7 +12,7 @@ let songList = [
 		artistname:"Silent Partner"
 	},
 	{
-		thumbnail:"Bovi.jpg",
+		thumbnail:"science main.jpg",
 		audio:"Bovi.mp3",
 		songname:"Bovi",
 		artistname:"The Grand Affair",
