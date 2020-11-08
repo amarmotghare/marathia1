@@ -6,7 +6,7 @@ function _all(query){
 }
 let songList = [
 	{
-		thumbnailhttps:"//firebasestorage.googleapis.com/v0/b/manisha-gift.appspot.com/o/Image%2Fbio.jpg?alt=media&token=7a2ea5c0-607f-43de-abbf-3609de4fac00",
+		thumbnailhttps:"bio.jpg",
 		audio:"Bright_Future.mp3",
 		songname:"Bright Future",
 		artistname:"Silent Partner"
@@ -74,7 +74,7 @@ let player = _(".player"),
 
 let main = {
 	audio:_(".player .main audio"),
-	thumbnail:_(".player .main img"),
+	thumbnail:_(".player .bio.img"),
 	seekbar:_(".player .main input"),
 	songname:_(".player .main .details h2"),
 	artistname:_(".player .main .details p"),
@@ -92,7 +92,7 @@ _(".player .player-list .list").innerHTML = (songList.map(function(song,songInde
 	return `
 		<div class="item" songIndex="${songIndex}">
 			<div class="thumbnail">
-				<img src="https://firebasestorage.googleapis.com/v0/b/manisha-gift.appspot.com/o/Image%2Fbio.jpg?alt=media&token=7a2ea5c0-607f-43de-abbf-3609de4fac00/ ${song.thumbnail}">
+				<img src="https:bio.jpg ${song.thumbnail}">
 			</div>
 			<div class="details">
 				<h2>${song.songname}</h2>
