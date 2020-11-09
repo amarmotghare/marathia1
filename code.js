@@ -8,7 +8,7 @@ let songList = [
 	{
 		thumbnail:"Bright_Future.jpg",
 		audio:"Bright_Future.mp3",
-		songname:"amar",
+		songname:"Bright_Future",
 		artistname:"Silent Partner"
 	},
 	{
