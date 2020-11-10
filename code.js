@@ -6,7 +6,7 @@ function _all(query){
 }
 let songList = [
 	{
-		thumbnail:"Bright_Future.jpg",
+		thumbnail:"science main.jpg",
 		audio:"Bright_Future.mp3",
 		songname:"Bright_Future",
 		artistname:"Silent Partner"
