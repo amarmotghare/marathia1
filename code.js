@@ -7,13 +7,13 @@ function _all(query){
 let songList = [
 	{
 		thumbnail:"science main.jpg",
-		audio:"Bright_Future.mp3",
+		audio:"Bright_Future.m4a",
 		songname:"Bright",
 		artistname:"Silent Partner"
 	},
 	{
-		thumbnail:"Bovi.jpg",
-		audio:"Bovi.mp3",
+		thumbnail:"bio.jpg",
+		audio:"Bright_Future.m4a",
 		songname:"Bovi",
 		artistname:"The Grand Affair",
 	},
