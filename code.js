@@ -6,13 +6,13 @@ function _all(query){
 }
 let songList = [
 	{
-		thumbnail:"bio.jpg",
-		audio:"Bright_Future.m4a",
-		songname:"amar",
+		thumbnail:"Bright_Future.jpg",
+		audio:"Bright_Future.mp3",
+		songname:"Bright Future",
 		artistname:"Silent Partner"
 	},
 	{
-		thumbnail:"science main.jpg",
+		thumbnail:"Bovi.jpg",
 		audio:"Bovi.mp3",
 		songname:"Bovi",
 		artistname:"The Grand Affair",
@@ -92,7 +92,7 @@ _(".player .player-list .list").innerHTML = (songList.map(function(song,songInde
 	return `
 		<div class="item" songIndex="${songIndex}">
 			<div class="thumbnail">
-				<img src=./files/${song.thumbnail}">
+				<img src="./files/${song.thumbnail}">
 			</div>
 			<div class="details">
 				<h2>${song.songname}</h2>
