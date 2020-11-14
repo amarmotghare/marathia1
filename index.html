@@ -21,6 +21,43 @@
         .more p a { text-decoration: none; color: black;}
         .more p { color:black; background:white; text-align: right; padding-top:3px; padding-bottom:5px; padding-right:30px; font-size:30px; margin:5px; border-radius:5px; border: 3px black ; }
       
+      .slider { overflow: hidden; height: 400px; width: 500px;margin-left:20%; margin-top:10%}
+      .slider figure div { float:left; width:33.33%; }
+      .slider figure img { width:95%; float: left; border-radius:20px; }
+      .slider figure { position: relative; width:300%;
+      margin:0px; left:0px;
+      animation:amar 18s infinite ;}
+      
+       @keyframes amar{ 
+         
+         0% { left:100%;
+         }
+         
+         10% { left:-100%;
+         }
+         
+         12%{ left:-200%;
+           
+         }
+         
+         25%{ left:-300%;
+           
+         }
+         
+         40%{ left:-200%;
+           
+         }
+         
+         55%{ left:-100%;
+           
+          
+         }
+         70%{ left:-100%;
+           
+         }
+         85%{ left:-100%;}
+         
+         
       .wrapper{
   height: 100%;
   width: 300px;
@@ -177,6 +214,23 @@
               </nav>
           </div>
     <div class="main">
+      <div class="slider">
+   <figure>
+     
+     <div class="slide">
+       <img src="https://cdn.pixabay.com/photo/2020/03/27/08/56/lake-4972944_1280.jpg" alt="">
+        </div>
+        
+       <div class="slide">
+       <img src="https://cdn.pixabay.com/photo/2016/08/09/21/54/yellowstone-national-park-1581879_1280.jpg" alt="">
+        </div>
+        
+       <div class="slide">
+       <img src="https://cdn.pixabay.com/photo/2012/08/06/00/53/bridge-53769_1280.jpg" alt="">
+        </div>
+     
+   </figure>
+ </div>
       <div class="title-name"><h2>Science</h2>
       <!--card science 1 -->
       <div class="card"><a href="https://www.marathia1.com/?m=1"> 
