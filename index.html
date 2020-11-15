@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style type="text/css">
       *{ margin: 0px; padding: 0px;}
-      .main { margin:2%; margin-top:15px; padding-top:54%; }
+      .main { margin:2%; margin-top:15px; padding-top:650px; }
       .card { width:45%;display:inline-block; box-shadow: 2px 2px 20px black;border-radius: 5px; margin:20px; }
       .card a { text-decoration:none; color:black; }
       .image { display:flex; justify-content:center; align-items: center; }
@@ -21,19 +21,10 @@
         .more p a { text-decoration: none; color: black;}
         .more p { color:black; background:white; text-align: right; padding-top:3px; padding-bottom:5px; padding-right:30px; font-size:30px; margin:5px; border-radius:5px; border: 3px black ; }
       
-      .slider { overflow: hidden; height: 400px; width: 500px;margin-left:20%; margin-top:10%}
-      .slider figure div { float:left; width:33.33%; }
-      .slider figure img { width:95%; float: left; border-radius:20px; }
-      .slider figure { position: relative; width:300%;
-      margin:0px; left:0px;
-
-
       .wrapper{
   height: 100%;
   width: 300px;
-  position: relative;
-        margin:0px;
-        padding:0px;
+  position: absolute;
 }
 .wrapper .menu-btn{
   position: absolute;
@@ -154,7 +145,14 @@
   background: #404040;
 }
 .list-items .icons a:first-child{
-  margin-left: 0px; }
+  margin-left: 0px;}
+      
+      .slider { overflow: hidden; height: 500px; width: 900px; margin-left:45px; margin-right:0px; padding-left:10px; padding-top:5px; padding-bottom:5px; margin-top:15%; position:absolute;margin-right:0px; }
+      .slider figure div { float:left; width:33.33%; }
+      .slider figure img { width:95%; float: left; border-radius:20px; }
+      .slider figure {  width:300%; position:relative;
+        
+      animation:amar 18s infinite ;}
       
       @keyframes amar{ 
          
@@ -184,13 +182,31 @@
            
          }
          85%{ left:-100%;}
-        </style>
-  </head>
+      
+    </style>
+    <title>Marathi a1</title>
+  
+  </head> 
   <body>
-    
+    <div class="slider">
+   <figure>
+     
+     <div class="slide">
+       <img src="https://cdn.pixabay.com/photo/2020/03/27/08/56/lake-4972944_1280.jpg" alt="">
+        </div>
+        
+       <div class="slide">
+       <img src="https://cdn.pixabay.com/photo/2016/08/09/21/54/yellowstone-national-park-1581879_1280.jpg" alt="">
+        </div>
+        
+       <div class="slide">
+       <img src="https://cdn.pixabay.com/photo/2012/08/06/00/53/bridge-53769_1280.jpg" alt="">
+        </div>
+     
+   </figure>
+ </div>
     
     <div class="wrapper">
-      
         <input type="checkbox" id="btn" hidden>
         <label for="btn" class="menu-btn">
           <i class="fa fa-bars"></i>
@@ -214,7 +230,9 @@
           </ul>
               </nav>
           </div>
+   
     <div class="main">
+       
       <div class="title-name"><h2>Science</h2>
       <!--card science 1 -->
       <div class="card"><a href="https://www.marathia1.com/?m=1"> 
