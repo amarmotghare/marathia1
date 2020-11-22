@@ -7,64 +7,64 @@ function _all(query){
 let songList = [
 	{
 		thumbnail:"bio.jpg",
-		audio:"Bright_Future.m4a",
-		songname:"Bright Future ",
-		artistname:"Silent Partner"
+		audio:"Biology introduction .mp3",
+		songname:"Biology Introduction",
+		artistname:"Amar Motghare"
 	},
 	{
 		thumbnail:"bio.jpg",
-		audio:"Bright_Future.m4a",
-		songname:"Bovi",
-		artistname:"The Grand Affair",
+		audio:"जीवधारियों का वर्गीकरण .mp3",
+		songname:"जीवधारियों का वर्गीकरण",
+		artistname:"Amar Motghare",
 	},
 	{
-		thumbnail:"Sunny_Looks_Good_on_You.jpg",
-		audio:"Sunny_Looks_Good_on_You.mp3",
-		songname:"Sunny Looks Good on You",
-		artistname:"Midnight North",
+		thumbnail:"bio.jpg",
+		audio:"जीवों के नामकरण की द्विनाम पद्धति.mp3",
+		songname:"जीवों के नामकरण की द्विनाम पद्धति",
+		artistname:"Amar Motghare",
 	},
+	
+
+
+
+
+	
 	{
-		thumbnail:"Bright_Eyed_Blues.jpg",
-		audio:"Bright_Eyed_Blues.mp3",
-		songname:"Bright Eyed Blues",
-		artistname:"Unicorn Heads",
+		thumbnail:"bio.jpg",
+		audio:"कोशिका एवं कोशिका सरचना.mp3",
+		songname:"कोशिका एवं कोशिका सरचना",
+		artistname:"Amar Motghare",
 	},
-	{
-		thumbnail:"How_it_Began.jpg",
-		audio:"How_it_Began.mp3",
-		songname:"How it Began",
-		artistname:"Silent Partner",
-	},
-	{
-		thumbnail:"Simon_s_Song.jpg",
-		audio:"Simon_s_Song.mp3",
-		songname:"Simon's Song",
-		artistname:"Dan Lebowitz",
-	},
-	{
-		thumbnail:"Scanline.jpg",
-		audio:"Scanline.mp3",
-		songname:"Scanline",
-		artistname:"Mike Relm",
-	},
-	{
-		thumbnail:"Flight_To_Tunisia.jpg",
-		audio:"Flight_To_Tunisia.mp3",
-		songname:"Flight To Tunisia",
-		artistname:"Causmic",
-	},
-	{
-		thumbnail:"Calimba.jpg",
-		audio:"Calimba.mp3",
-		songname:"Calimba",
-		artistname:"E's Jammy Jams",
-	},
-	{
-		thumbnail:"Everglow.jpg",
-		audio:"Everglow.mp3",
-		songname:"Everglow",
-		artistname:"Patrick Patrikios",
-	}
+	
+
+
+
+
+	
+	
+
+
+
+
+	
+	
+
+
+
+
+	
+	
+
+
+
+
+	
+	
+
+
+
+
+	
 ];
 
 let currentSongIndex = 0;
