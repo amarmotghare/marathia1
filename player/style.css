@@ -119,8 +119,8 @@ body {
 	cursor: pointer;
 }
 .player .list .item .thumbnail {
-	width: 150px;
-	height: 150px;
+	width: 100px;
+	height: 100px;
 	overflow: hidden;
 }
 .player .list .thumbnail img {
