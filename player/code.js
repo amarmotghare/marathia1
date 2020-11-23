@@ -28,7 +28,7 @@ let songList = [
 		audio:"कोशिका एवं कोशिका सरचना.mp3",
 		songname:"कोशिका एवं कोशिका सरचना",
 		artistname:"Amar Motghare",
-	},
+	}
 ];
 
 let currentSongIndex = 0;
