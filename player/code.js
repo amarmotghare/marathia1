@@ -9,7 +9,7 @@ let songList = [
 		thumbnail:"bio.jpg",
 		audio:"Biology introduction .mp3",
 		songname:"Biology Introduction",
-		artistname:"Amar Motghare"
+		artistname:"Amar Motghare",
 	},
 	{
 		thumbnail:"bio.jpg",
@@ -23,48 +23,12 @@ let songList = [
 		songname:"जीवों के नामकरण की द्विनाम पद्धति",
 		artistname:"Amar Motghare",
 	},
-	
-
-
-
-
-	
 	{
 		thumbnail:"bio.jpg",
 		audio:"कोशिका एवं कोशिका सरचना.mp3",
 		songname:"कोशिका एवं कोशिका सरचना",
 		artistname:"Amar Motghare",
 	},
-	
-
-
-
-
-	
-	
-
-
-
-
-	
-	
-
-
-
-
-	
-	
-
-
-
-
-	
-	
-
-
-
-
-	
 ];
 
 let currentSongIndex = 0;
@@ -92,7 +56,7 @@ _(".player .player-list .list").innerHTML = (songList.map(function(song,songInde
 	return `
 		<div class="item" songIndex="${songIndex}">
 			<div class="thumbnail">
-				<img src=./file/${song.thumbnail}">
+				<img src="./files/${song.thumbnail}">
 			</div>
 			<div class="details">
 				<h2>${song.songname}</h2>
@@ -161,4 +125,3 @@ main.seekbar.addEventListener("change",function(){
 	main.audio.currentTime = main.seekbar.value;
 });
 loadSong(currentSongIndex);
-
