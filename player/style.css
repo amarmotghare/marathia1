@@ -81,7 +81,7 @@ body {
 	position: absolute;
 	width: 100%;
 	margin-top:-20px;
-	height: 60%;
+	height: 80%;
 	overflow-y: scroll;
 	background: rgba(0,0,0,0.8);
 	z-index:2;
