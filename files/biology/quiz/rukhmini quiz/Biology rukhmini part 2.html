@@ -1,0 +1,393 @@
+
+
+<script src='demo-to-prevent-copy-paste-on-blogger_files/googleapis.js'></script> <script type='text/javascript'> if (typeof document.onselectstart!="undefined" ) { document.onselectstart=new Function ("return false" ); } else { document.onmousedown=new Function ("return false" ); document.onmouseup=new Function ("return true" ); } </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt|Yeseva+One" rel="stylesheet">
+    <style>
+body{
+            background-color:f6f6f6;
+        }
+        #next{
+            display:none;
+        }
+        #sub{
+            display: none;
+            margin-bottom:20%;
+            
+        }
+        .front{
+            margin:2%;
+            margin-top:50%;
+            outline:5px solid #45B97C;
+            padding:10%;
+            height:fit-content;
+            padding-top:inherit;
+            text-align: center;
+            background-color: white;
+            color:black;
+            font-family: 'Yeseva One', cursive;
+
+        }
+        
+        .front h1 { 
+          padding-top:40px;
+          padding-bottom:40px;
+          font-size:35px;
+        }
+        
+        .answers{
+            margin:2%;
+            margin-top:5%;
+            padding:5%;
+            align-self: center;
+            background-color: white;
+            display:none;
+            color:#ec71f4;
+            border:5px solid white;
+            font-family: 'Rokkitt', serif;
+            font-size:22px;
+        }
+        .qa{
+            color:Black;
+        }
+        .quiz{
+            margin:2%;
+            margin-top:5%;
+            padding:5%;
+            align-self: center;
+            background-color: #fff;
+            display:none;
+            color:Black;
+            border:5px solid #45B97C;
+            font-family: 'Rokkitt', serif;
+        }
+        .result{
+            margin:2%;
+            padding:5%;
+            padding-top:40%;
+            height:330px;
+            text-align: center;
+            background-color: white;
+            display: none;
+            font-family: 'Rokkitt', serif;
+
+        }
+        input[type="radio"] {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+        .radio{
+             
+             
+             padding-bottom:10%;
+             
+        }
+        .radio label:before {
+          content: "";
+          display: inline-block;
+          width: 15px;
+          height:15px;
+          margin-right: 0.5em;
+          vertical-align: -3px;
+          border: 2px solid #666666;
+          padding: 0.13em;
+          background-color: transparent;
+          background-clip: content-box;
+
+        }
+        .radio label {
+          margin-right: 1em;
+        }
+        .radio input:hover + label:before {
+          border-color: #71d1f4;
+        }
+        .radio input:checked + label:before {
+          background-color: #219011;
+          border-color: #219011;
+        }
+        .arrow{
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 24px solid white;
+            position: relative;
+            left:30px;
+
+        }
+        #q{
+            background-color: white;
+            padding-top:10px;
+            padding-left:10px; 
+            padding-bottom:10px;
+            font-size:35px;
+            font-weight: bold;
+            border-radius:5px;
+            
+        }
+        #op1,#op2,#op3,#op4{
+            background-color: #F0F8FF;
+            margin-bottom:5%;
+            padding:40px;
+            padding-left: 4%;
+            border-radius:5px;
+            font-size:40px;
+            border:2px solid gray;
+        }
+        #op1:hover,#op2:hover,#op3:hover,#op4:hover{
+            background-color:#F3E5AB;
+        }
+        #num{
+            background-color:#E5E5E5;
+            font-size:35px;
+            border-radius:5px;
+            padding-left:5%;
+            padding-top:5%;
+            color:black;
+            width:100%;
+            height:70px;
+
+        }
+        #sub{
+            background-color:#0072D5;
+            padding: 15px;
+            border-radius:5px;
+            border:2px solid black;
+            width:200px;
+            font-size:35px;
+            color: White;
+            font-weight: bold;
+            box-shadow: 2px 2px 20px black;
+        }
+        #start{
+            background-color: green;
+            color:white;
+            padding:18px;
+            font-size:40px;
+            border:3px solid black;
+            width:300px;
+            border-radius:5px;
+            font-weight: bold;
+            box-shadow: 2px 2px 20px black;
+
+        }
+        .score{
+            font-size:35px;
+            font-weight: bolder;
+            color: black;
+        }
+        .message{
+            font-size: 35px;
+            color: #40c2f2;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        .answers{
+            display: none;
+        }
+        #a1,#a2,#a3,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10{
+            color:#139c24;
+            font-weight: bold;
+        }
+
+</style>
+</head>
+<body>
+    <div class="front">
+        <h1>Biology Rukhmini part 1 </h1>
+        <button type="button" id="start">Start > </button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <center><button type="button" id="sub">Submit</button></center>
+		<p style=" font-size:35px;">Quiz Developed By <a href="https://www.marathia1.com" rel="noopener noreferrer" target="_blank"><span style="background-color: rgb(239, 239, 239);">Marathi A1</span></a></p>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an" style="font-size:35px; padding:5px;margin-top:40px;" >Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. . विटामिन की खोज की -- ?</p>
+        <p >Ans:<span id="a1">फंक</span></p>
+        <p class="qa">2.कौनसा कार्बोहाइड्रेट मोनोसैकेराइड है ?</p>
+        <p >Ans:<span id="a2"> ग्लूकोज एंव फ्रुक्टोज ( Homodont ) </span></p>
+        <p class="qa">3.यकृत ( Liver )द्वारा बनाया गया पित्त ( Bile ) पत्तशाय में किसके द्वारा पहुचता है  ?</p>
+        <p >Ans:<span id="a3">सिस्टिक - डक्ट </span></p>
+        <p class="qa">4.निंमल्लिखित में से कौनसा डायसैकाईड ( Disaccharide )  है  ?</p>
+        <p >Ans:<span id="a4">माल्टोज</span></p>
+        <p class="qa">5. निम्मलिखित में से किसके संश्लेषण  ( Synthesis )के लिये कोलेस्टॉल आवश्यक होता है ?</p>
+        <p>Ans:<span id="a5">एस्ट्राडियोल ( Estradiol</span></p>
+        <p class="qa">6.निम्मलिखित में से कौनसा दुग्ध प्रोटीन ( milk protin )  है ?</p>
+        <p>Ans:<span id="a6"> कैसीन </span></p>
+        <p class="qa">7.आहार नाल Alimentary Canal )  के किस भाग में प्रोटीन्स का एमिनो अम्ल में निम्नीकरण (Degradation )  होता है ?</p>
+        <p >Ans:<span id="a7">छोटी आंत</span></p>
+        <p class="qa">8.डी. एन. ए. ( D.N.A.) में होते है ?</p>
+        <p >Ans:<span id="a8"> न्यूक्लिओटाइडस </span></p>
+        <p class="qa">9.किस विटामिन को हार्मोन भी कहा जाता है ?</p>
+        <p >Ans:<span id="a9"> विटामिन D </span></p>
+       <p class="qa">10.रेनिन का स्त्रवन करने वाला अंग है ?</p>
+        <p>Ans:<span id="a10"> अमाशय</span></p>
+    </div>
+    <script>
+ $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:" विटामिन की खोज की -- ?",
+            ans:["1) लुनिन ने","2) फंक ने", "3) सुमनर ने","4) सैंगर ने "],
+            right:"1"};
+        var que2={que:"कौनसा कार्बोहाइड्रेट मोनोसैकेराइड है  ?",
+            ans:["1) सुक्रोज ","2) ग्लूकोज एंव फ्रुक्टोज","3) गेलैक्टोज","4) उपर्युक्त में से कोई नही "],
+            right:"1"};
+        var que3={que:" यकृत ( Liver )द्वारा बनाया गया पित्त ( Bile ) पत्तशाय में किसके द्वारा पहुचता है ?",
+            ans:["1) हिपैटो - गॉल डक्ट","2) हिपैटी - पैंक्रियाटिक डक्ट ","3) सिस्टिक डक्ट ","4) हिपैटिक डक्ट"],    
+			right:"2"};
+        var que4={que:"निंमल्लिखित में से कौनसा डायसैकाईड ( Disaccharide )  है ?",
+            ans:["1) फ्रक्टोज","2) डेक्सट्रिन","3) गलैक्टोज","4) माल्टोज"],
+            right:"3"};
+        var que5={que:"निम्मलिखित में से किसके संश्लेषण  ( Synthesis )के लिये कोलेस्टॉल आवश्यक होता है  ?",
+            ans:["1) इन्सुलिन","2) एस्ट्रोडियोल","3) ग्लाइकोजन","4) उपर्युक्त सभी"],
+            right:"1"};
+        var que6={que:"निम्मलिखित में से कौनसा दुग्ध प्रोटीन ( Milk Protin ) है  ?",
+            ans:["1) लैक्टोजन","2) मायोसिन","3) कैसीन","4) रेनिन"],
+            right:"2"};
+        var que7={que:"आहार नाल ( Alimentary Canal ) के किस भाग में प्रोटीन्स का एमिनो अम्ल में निम्नीकरण ( Degradation )  होता है  ?",
+		    ans:["1) छोटी आंत","2) कोलन","3) स्टोमक ( उदर )","4) सिकम"],
+			right:"0"};
+        var que8={que:"डी. एन. ए. ( D.N.A.) में होते है  ?",
+		    ans:["1) एमिनो एसिड ","2) पेप्टाइड्स","3) पेप्टोन्स","4) न्यूक्लिओटाइडस"],
+			right:"3"};
+        var que9={que:"किस विटामिन को हार्मोन भी कहा जाता है ?",
+		    ans:["विटामिनA ","विटामिन B ","विटामिन D ","विटामिनE "],
+			right:"2"};
+        var que10={que:"रेनिन ( Rennin )  का स्त्रवण करने वाला अंग है  ?",
+		    ans:["1) यकृत ","2) अमाशय","3) वृक्क","3) उपर्युक्त में से कोई नही "],
+			right:"1"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no!!You need to do better.");
+            }
+            else if(score<8){
+                $(".message").text("Good.Dont stop studying.");
+            }
+            else{
+                $(".message").text("Great!!You have really good knowledge of Science.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+
+</script>
+</body>
+
+</html>
