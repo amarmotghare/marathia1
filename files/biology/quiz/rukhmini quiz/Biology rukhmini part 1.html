@@ -1,0 +1,394 @@
+
+
+<script src='demo-to-prevent-copy-paste-on-blogger_files/googleapis.js'></script> <script type='text/javascript'> if (typeof document.onselectstart!="undefined" ) { document.onselectstart=new Function ("return false" ); } else { document.onmousedown=new Function ("return false" ); document.onmouseup=new Function ("return true" ); } </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt|Yeseva+One" rel="stylesheet">
+    <style>
+body{
+            background-color:f6f6f6;
+        }
+        #next{
+            display:none;
+        }
+        #sub{
+            display: none;
+            margin-bottom:20%;
+            
+        }
+        .front{
+            margin:2%;
+            margin-top:50%;
+            outline:5px solid #45B97C;
+            padding:10%;
+            height:fit-content;
+            padding-top:inherit;
+            text-align: center;
+            background-color: white;
+            color:black;
+            font-family: 'Yeseva One', cursive;
+
+        }
+        
+        .front h1 { 
+          padding-top:40px;
+          padding-bottom:40px;
+          font-size:35px;
+        }
+        
+        .answers{
+            margin:2%;
+            margin-top:5%;
+            padding:5%;
+            align-self: center;
+            background-color: white;
+            display:none;
+            color:#ec71f4;
+            border:5px solid white;
+            font-family: 'Rokkitt', serif;
+            font-size:22px;
+        }
+        .qa{
+            color:Black;
+        }
+        .quiz{
+            margin:2%;
+            margin-top:5%;
+            padding:5%;
+            align-self: center;
+            background-color: #fff;
+            display:none;
+            color:Black;
+            border:5px solid #45B97C;
+            font-family: 'Rokkitt', serif;
+        }
+        .result{
+            margin:2%;
+            padding:5%;
+            padding-top:40%;
+            height:330px;
+            text-align: center;
+            background-color: white;
+            display: none;
+            font-family: 'Rokkitt', serif;
+
+        }
+        input[type="radio"] {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+        .radio{
+             
+             
+             padding-bottom:10%;
+             
+        }
+        .radio label:before {
+          content: "";
+          display: inline-block;
+          width: 15px;
+          height:15px;
+          margin-right: 0.5em;
+          vertical-align: -3px;
+          border: 2px solid #666666;
+          padding: 0.13em;
+          background-color: transparent;
+          background-clip: content-box;
+
+        }
+        .radio label {
+          margin-right: 1em;
+        }
+        .radio input:hover + label:before {
+          border-color: #71d1f4;
+        }
+        .radio input:checked + label:before {
+          background-color: #219011;
+          border-color: #219011;
+        }
+        .arrow{
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 24px solid white;
+            position: relative;
+            left:30px;
+
+        }
+        #q{
+            background-color: white;
+            padding-top:10px;
+            padding-left:10px; 
+            padding-bottom:10px;
+            font-size:35px;
+            font-weight: bold;
+            border-radius:5px;
+            
+        }
+        #op1,#op2,#op3,#op4{
+            background-color: #F0F8FF;
+            margin-bottom:5%;
+            padding:40px;
+            padding-left: 4%;
+            border-radius:5px;
+            font-size:40px;
+            border:2px solid gray;
+        }
+        #op1:hover,#op2:hover,#op3:hover,#op4:hover{
+            background-color:#F3E5AB;
+        }
+        #num{
+            background-color:#E5E5E5;
+            font-size:35px;
+            border-radius:5px;
+            padding-left:5%;
+            padding-top:5%;
+            color:black;
+            width:100%;
+            height:70px;
+
+        }
+        #sub{
+            background-color:#0072D5;
+            padding: 15px;
+            border-radius:5px;
+            border:2px solid black;
+            width:200px;
+            font-size:35px;
+            color: White;
+            font-weight: bold;
+            box-shadow: 2px 2px 20px black;
+        }
+        #start{
+            background-color: green;
+            color:white;
+            padding:18px;
+            font-size:40px;
+            border:3px solid black;
+            width:300px;
+            border-radius:5px;
+            font-weight: bold;
+            box-shadow: 2px 2px 20px black;
+
+        }
+        .score{
+            font-size:35px;
+            font-weight: bolder;
+            color: black;
+        }
+        .message{
+            font-size: 35px;
+            color: #40c2f2;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        .answers{
+            display: none;
+        }
+        #a1,#a2,#a3,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10{
+            color:#139c24;
+            font-weight: bold;
+        }
+
+</style>
+</head>
+<body>
+    <div class="front">
+        <h1>Biology Rukhmini part 1 </h1>
+        <button type="button" id="start">Start > </button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <center><button type="button" id="sub">Submit</button></center>
+		<p style=" font-size:35px;">Quiz Developed By <a href="https://www.marathia1.com" rel="noopener noreferrer" target="_blank"><span style="background-color: rgb(239, 239, 239);">Marathi A1</span></a></p>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an" style="font-size:35px; padding:5px;margin-top:40px;" >Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. . बेरी - बेरी रोग किस विटामिन की कमी से होता है  ?</p>
+        <p >Ans:<span id="a1"> विटामिन B<sub>12</sub></sub></span></p>
+        <p class="qa">2.मेंढक में दांत होते है ?</p>
+        <p >Ans:<span id="a2"> होमोडोन्ट ( Homodont ) </span></p>
+        <p class="qa">3. स्टार्च से संबंधित है ?</p>
+        <p >Ans:<span id="a3">ग्लूकोज </span></p>
+        <p class="qa">4.दांत का शिखर बना होता है ?</p>
+        <p >Ans:<span id="a4">डेंटिन का </span></p>
+        <p class="qa">5. स्कर्वी रोग किस विटामिन की कमी से होता है  ?</p>
+        <p>Ans:<span id="a5"> विटामिन C</span></p>
+        <p class="qa">6.पेप्सिन होता है?</p>
+        <p>Ans:<span id="a6"> एंजाइम </span></p>
+        <p class="qa">7.ग्लूकोज का ग्लाइकोजन में परिवर्तन यकृत में होता है , किन्तु इसका संग्रह होता है ?</p>
+        <p >Ans:<span id="a7">यकृत तथा पेशियों में </span></p>
+        <p class="qa">8.वह कौनसा तत्व है जो दन्त इनैमल में पाया जाता है ?</p>
+        <p >Ans:<span id="a8"> फ़्लोरिन </span></p>
+        <p class="qa">9.पित्त का मुख्य कार्य है ?</p>
+        <p >Ans:<span id="a9"> पाचन तथा पोषण हेतु वसा का इमल्सन करना </span></p>
+
+        <p class="qa">10.जनन क्षमता में कमी होती है ?</p>
+        <p>Ans:<span id="a10"> विटामिन E की कमी से </span></p>
+    </div>
+    <script>
+ $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:" बेरी - बेरी रोग किस विटामिन की कमी से होता है ?",
+            ans:["1) विटामिन A","2) विटामिन B<sub>1</Sub>", "3) विटामिन C","4) विटामिन B <sub>12</sub>"],
+            right:"1"};
+        var que2={que:"मेढक में दांत होते है ?",
+            ans:["1) होमोडोन्ट ( Homodont ) ","2) थिकोडोन्ट ( Thecodont )  ","3) हेटीरोडोन्ट ( heterodont )","4) उपर्युक्त में से कोई नही "],
+            right:"0"};
+        var que3={que:" स्टार्च से संबंधित है ?",
+            ans:["1) ग्लूकोज","2) फ्रक्टोज","3) सुक्रोज","4) गलैक्टोज"],    
+			right:"0"};
+        var que4={que:"दांत का शिखर बना होता है ?",
+            ans:["1) उपास्थि ( Cartilage ) का ","2) इनैमल (  Enamel )का","3) डेन्टिन ( Dentine ) का","4) काइटिन ( Chitine ) का"],
+            right:"2"};
+        var que5={que:"स्कर्वी ( Scarvy ) रोग किस विटामिन की कमी से होता है ?",
+            ans:["1) विटामिन C","2)विटामिन K  ","3) विटामिन E","4) विटामिन D"],
+            right:"0"};
+        var que6={que:"पेप्सिन होता है ?",
+            ans:["1) हार्मोन","2) एंजाइम","3) विटामिन","4) पोषक तत्व"],
+            right:"1"};
+        var que7={que:"ग्लूकोज का ग्लाइकोजन में परिवर्तन यकृत में होता है , किन्तु इसका संग्रह होता है ?",
+		    ans:["1) यकृत ( Liver )  में ","2) तिल्ली ( Spleen ) में ","3) यकृत तथा पेशियो ( Liver and Muscules )  में ","4) यकृत एंव तिल्ली ( Liver and Spleen )  में "],
+			right:"2"};
+        var que8={que:"वह कौनसा तत्व है जो दन्त इनैमल को कठोर बनाता है ?",
+		    ans:["1) कैल्शियम","2) फ्लोरिन","3) आयोडीन","4) सोडियम"],
+			right:"1"};
+        var que9={que:"पित्त का मुख्य कार्य है ?",
+		    ans:["1) वसा का एंजाइम द्वारा पाचन","2) उत्सर्जी पदार्थो का निवारण","3) प्रोटीन के पाचन का नियंत्रण","4) पाचन तथा शोषण हेतु वसा का इमल्सन"],
+			right:"3"};
+        var que10={que:"जनन क्षमता में कमी होती है ?",
+		    ans:["1) विटामिन A ","2) विटामिन B","3) विटामिन K","4) विटामिन E "],
+			right:"3"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no!!You need to do better.");
+            }
+            else if(score<8){
+                $(".message").text("Good.Dont stop studying.");
+            }
+            else{
+                $(".message").text("Great!!You have really good knowledge of Science.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+
+</script>
+</body>
+
+</html>
